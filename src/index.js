@@ -5,10 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { store } from "./Redux/store"
 import { Provider } from "react-redux"
-import { addAction } from './Redux/action';
-
-store.subscribe(()=>console.log(store.getState()))
-store.dispatch(addAction())
 
 ReactDOM.render(
   <React.StrictMode>
