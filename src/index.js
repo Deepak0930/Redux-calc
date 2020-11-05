@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from "./Redux/store"
+import { Provider } from "react-redux"
+import { addAction } from './Redux/action';
+
+store.subscribe(()=>console.log(store.getState()))
+store.dispatch(addAction())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
